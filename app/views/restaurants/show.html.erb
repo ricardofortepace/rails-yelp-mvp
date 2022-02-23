@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
@@ -11,21 +9,27 @@
 </p>
 
 <p>
-  <strong>Stars:</strong>
+  <strong>Category:</strong>
   <%= @restaurant.category %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @restaurant.phone_number %>
 </p>
 
 <h4>Reviews:</h4>
 <ul>
   <% @restaurant.reviews.each do |review| %>
     <li>
-      <%= review.content %>
-      <%= link_to "Remove", review_path(review), method: 'DELETE', data: { confirm: 'Are you sure?' } %>
+      <span><em>Rating: </em><strong><%= review.rating %></strong></span><br>
+      <span><em>Review: </em><%= review.content %> </span>
+      <%= link_to "Remove", review_path(review), method: 'DELETE', data: { confirm: 'Are you fucking sure?' }, class: "tiny-text"%>
     </li>
   <% end %>
 </ul>
 
 
-<%= link_to 'Add new Review', new_restaurant_review_path(@restaurant), class: 'btn btn-outline-primary'  %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-outline-primary'  %>
-<%= link_to 'Back', restaurants_path, class: 'btn btn-outline-primary'  %>
+<%= link_to 'Add A New Review!', new_restaurant_review_path(@restaurant), class: 'btn btn-outline-success'  %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-outline-warning'  %>
+<%= link_to 'Go Home!', restaurants_path, class: 'btn btn-outline-primary'  %>

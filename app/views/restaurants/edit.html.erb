@@ -1,5 +1,7 @@
 <h1>Editing Restaurant</h1>
 
 <%= render 'form', restaurant: @restaurant, class: 'btn btn-outline-primary'  %>
-<%= link_to 'Show', @restaurant, class: 'btn btn-outline-primary'%>
-<%= link_to 'Back', restaurants_path, class: 'btn btn-outline-primary'  %>
+<div class="position-relative">
+  <%= link_to 'Show', @restaurant, class: 'btn btn-outline-success btn-lateral-2'%>
+  <%= link_to 'Go Home!', restaurants_path, class: 'btn btn-outline-primary btn-lateral'  %>
+</div>
